@@ -1,0 +1,59 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hello PHP</title>
+<style>
+   input[type=text] {
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     box-sizing: border-box;
+     border: 2px solid red;
+     border-radius: 4px;
+     font-size: 150%;
+   }
+   
+   .block {
+   display: block;
+   width: 100%;
+   border: none;
+   background-color: #4CAF50;
+   color: white;
+   padding: 14px 28px;
+   font-size: 16px;
+   cursor: pointer;
+   text-align: center;
+   }
+
+   .block:hover {
+   background-color: #ddd;
+   color: black;
+   }
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+   function foo () {
+   $.ajax({
+      url:"hello.php", //the page containing php script
+      type: "POST", //request type
+      data: {
+           txt1: $("#myfield1").val(),
+           txt2: $("#myfield2").val()
+      },
+      success:function(result){
+         alert(result);
+      }
+   });}
+</script>
+</head>
+
+<body>
+   <input type="text" id="myfield1" value="Hello">
+   <input type="text" id="myfield2" value="PHP">
+   <button onclick="foo()" class="block">Submit</button>
+</body>
+</html>
+

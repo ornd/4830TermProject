@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'Recipe_App.apps.RecipeConfig',
     'HelloWorld.apps.HelloworldConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -76,8 +77,12 @@ WSGI_APPLICATION = 'TermProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'recipe_list',
+        'USER': 'dorn',
+        'PASSWORD': 'MachineLearning42!',
+        'HOST': 'ec2-18-224-22-188.us-east-2.compute.amazonaws.com',
+        'PORT': '3306',
     }
 }
 

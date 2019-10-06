@@ -1,3 +1,17 @@
-<h1>{{ recipe.name_text }}</h1>
-<p>{{ recipe.ingredient_text }}</p>
-<p>{{ recipe.instruction_text }}</p>
+<!DOCTYPE html>
+<html>
+    <h1>{{ recipe.name_text }}</h1>
+
+    <h4>{{ recipe.ingredient_text }}</h4>
+
+    {% if instruction_list %}
+        <ul>
+        {% for i in instruction_list %}
+            <p>{{ i }}</p>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p> no recipe found </p>
+    {% endif %}
+    <p><a href="{% url 'Recipe_App:index' %}"> Home</a></p>
+</html>

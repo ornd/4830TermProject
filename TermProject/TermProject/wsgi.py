@@ -22,7 +22,7 @@ sys.path.append(workspace)
 sys.path.append(project)
 
 # Add the path to 3rd party django application and to django itself.
-sys.path.append('/home/dorn')
-os.environ['DJANGO_SETTINGS_MODULE'] = 'TermProject.apache.override'
+#sys.path.append('/home/dorn')
+#os.environ['DJANGO_SETTINGS_MODULE'] = 'TermProject.apache.override'
 
 application = get_wsgi_application()
